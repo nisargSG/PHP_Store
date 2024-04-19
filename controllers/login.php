@@ -13,14 +13,13 @@ class ControllerLogin {
 
     // Method to display the user list
     public function render() {
+        global $loggedInUser;
         require_once 'views/login.php';
     }
 
     // Method to display the user list
     public function checkAuth($email,$password) {
         return User::isAuthorized($email,$password);
-       
-
     }
 }
 

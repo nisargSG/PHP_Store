@@ -1,6 +1,6 @@
 <?php
 
-
+require_once 'utils/db.php';
 class User {
     public $id;
     public $name;
