@@ -26,7 +26,7 @@
                             // Session does not exist or does not contain user information
                         ?>
                             <li><a class="dropdown-item" href="login.php">Login</a></li>
-                            <li><a class="dropdown-item" href="/signup.php">Create Account</a></li>
+                            <li><a class="dropdown-item" href="signup.php">Create Account</a></li>
                         <?php
                         }
 
