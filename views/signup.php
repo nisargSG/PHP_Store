@@ -48,15 +48,11 @@
                         <?php
 
                         if ($signupUser !== null) {
-                            if ($signupUser === true) {
-                                header("Location:login.php");
-                            } else {
-                                ?>
-                                <div class="alert alert-danger mt-2" role="alert">
-                                    Failed To Create Account
-                                </div>
+                            ?>
+                            <div class="alert alert-danger mt-2" role="alert">
+                                Failed To Create Account
+                            </div>
                             <?php
-                            }
                         }
                         ?>
 

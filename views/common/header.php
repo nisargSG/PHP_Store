@@ -13,7 +13,7 @@
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <?= isset($_SESSION["id"]) ? $_SESSION["name"] : "Account" ?>
+                        <?= isset($_SESSION["user_id"]) ? $_SESSION["user_name"] : "Account" ?>
                     </a>
                     <ul class="dropdown-menu">
 
@@ -21,7 +21,14 @@
                         // Session exists and contains user information
                         if (isset($_SESSION['user_id'])) { ?>
                             <li><a class="dropdown-item" href="#">My Cart</a></li>
-                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                            <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+                            <?php if(isset($_SESSION['user_id']) && $_SESSION['user_is_admin']==true){ ?>
+                            
+                            <li><a class="dropdown-item" href="#">Admin Panel</a></li>
+
+                            
+                            <?php } ?>
+
                         <?php } else {
                             // Session does not exist or does not contain user information
                         ?>

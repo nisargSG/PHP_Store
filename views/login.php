@@ -37,16 +37,13 @@
                         <button class="btn btn-outline-primary" type="submit">Login To Dashboard</button>
 
                         <?php if ($loggedInUser !== null) {
+                            ?>
 
-                            if ($loggedInUser === false) { ?>
+                            <div class="alert alert-danger mt-2" role="alert">
+                                Invalid Credentials
+                            </div>
 
-                                <div class="alert alert-danger mt-2" role="alert">
-                                    Invalid Credentials
-                                </div>
-
-                            <?php } else {
-                                header('Location:dashboard.php');
-                            }
+                        <?php
 
                         } ?>
 

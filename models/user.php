@@ -9,7 +9,8 @@ class User {
     public $password;
     public $is_admin;
 
-    public function __construct($name, $phone, $email, $password, $is_admin = 0) {
+    public function __construct($id,$name, $phone, $email, $password, $is_admin = 0) {
+        $this->id = $id;
         $this->name = $name;
         $this->phone = $phone;
         $this->email = $email;
@@ -46,7 +47,7 @@ class User {
         $userResult = executeQuery("SELECT * FROM users WHERE email='$email' AND password='$password'");
         if($userResult->num_rows>0){
             $userRow = $userResult->fetch_assoc();
-            return new User($userRow['id'], $userRow['phone'], $userRow['email'], $userRow['password'], $userRow['is_admin']);
+            return new User($userRow['id'],$userRow['name'], $userRow['phone'], $userRow['email'], $userRow['password'], $userRow['is_admin']);
         }
         return false;
     }
